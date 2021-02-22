@@ -36,3 +36,10 @@ function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
+// Make home transparent as the windows scroll down
+const home = document.querySelector('.home__container');
+const homeHeight = navbar.getBoundingClientRect().height;
+document.addEventListener('scroll', () =>{
+    home.style.opacity = homeHeight/window.scrollY;
+});
